@@ -8,20 +8,20 @@ plugins {
 }
 
 android {
-    namespace 'com.msc.demo_mvvm'
+    namespace 'com.msc.voice_chager'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.demo_mvvm"
+        applicationId "com.voice.chager"
         minSdk 24
         targetSdk 34
-        versionCode 14
-        versionName "14.0"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         def formattedDate = new Date().format("MM.dd.yyyy")
-        archivesBaseName = "animals${versionName}(${versionCode})_${formattedDate}"
+        archivesBaseName = "voice_chager${versionName}(${versionCode})_${formattedDate}"
     }
 
     signingConfigs {
