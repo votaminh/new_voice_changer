@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Animal_ringtone" parent="Theme.MaterialComponents.Light.NoActionBar">
+    </style>
+
+    <style name="Theme.Animal_ringtone" parent="Base.Theme.Animal_ringtone" />
+</resources>

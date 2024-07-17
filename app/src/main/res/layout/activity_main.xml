@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".component.home.HomeActivity"
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animals: Ringtone"
+        style="@style/TextView_Headline1"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginLeft="@dimen/size16"
+        />
+
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/size2"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/ad_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:adSize="BANNER"
+            app:adUnitId="4353" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</LinearLayout>

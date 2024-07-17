@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="6dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:tag="layout/item_language_0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size56"
+        android:background="@drawable/bg_item_language"
+        android:paddingVertical="8dp"
+        android:paddingStart="15dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/size10"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_language"
+            android:layout_width="@dimen/size24"
+            android:layout_height="@dimen/size24"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_vietnamese"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Vietnamese"
+            app:layout_constraintBottom_toBottomOf="@+id/img_language"
+            app:layout_constraintEnd_toStartOf="@+id/sw_language"
+            app:layout_constraintStart_toEndOf="@+id/img_language"
+            app:layout_constraintTop_toTopOf="@+id/img_language"
+            android:layout_marginLeft="@dimen/size6"
+            style="@style/TextView_Body1"
+            android:textColor="@color/black"
+            />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/sw_language"
+            android:layout_width="@dimen/size30"
+            android:layout_height="@dimen/size30"
+            android:checked="true"
+            android:clickable="false"
+            android:theme="@style/SwitchTheme"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_language"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_language" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

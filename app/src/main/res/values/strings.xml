@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name" translatable="false">Animal Ringtone</string>
+
+    <string name="english">English</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="hindi">Hindi</string>
+    <string name="spanish">Spanish</string>
+    <string name="french">French</string>
+    <string name="portuguese">Portuguese</string>
+
+    <string name="onboarding_title1">Animal sounds</string>
+    <string name="onboarding_intro1">Variety of different realistic animal sounds to choose from</string>
+    <string name="onboarding_title2">Set as ringtone</string>
+    <string name="onboarding_intro2">Set ringtones, contact ringtones, alarm sounds,…</string>
+    <string name="onboarding_title3">Each contact person</string>
+    <string name="onboarding_intro3">Set a different ringtone for each contact</string>
+
+    <string name="txt_categories">Categories</string>
+    <string name="txt_favourite">Favourite</string>
+    <string name="txt_setting">Setting</string>
+    <string name="txt_top_ringtone">Top best ringtones</string>
+    <string name="txt_empty">Empty</string>
+    <string name="txt_all_animal">All animal</string>
+    <string name="txt_bird">Bird</string>
+    <string name="txt_farm_animals">Cattle</string>
+    <string name="txt_insects">Insects</string>
+    <string name="txt_land">Land</string>
+    <string name="txt_mammals">Mammals</string>
+    <string name="txt_pet_animals">Pet animals</string>
+    <string name="txt_reptiles_and_amphibians">Reptiles and amphibians</string>
+    <string name="txt_switching_array">Switching array</string>
+    <string name="txt_water">Water</string>
+    <string name="txt_wild_animals">Wild animals</string>
+    <string name="txt_ringtone">Ringtone</string>
+    <string name="txt_contact">Contact</string>
+    <string name="txt_sms">SMS</string>
+    <string name="txt_alarm">Alarm</string>
+    <string name="txt_rate_5_star">Rate 5 star</string>
+    <string name="txt_revert_to_default">Revert to default ringtone</string>
+    <string name="txt_share">Share</string>
+    <string name="txt_license">License</string>
+    <string name="txt_privacy_terms"><![CDATA[Privacy & terms]]></string>
+    <string name="txt_error_report">Error report</string>
+    <string name="txt_language">Language</string>
+    <string name="txt_write_setting_permission_title">Requires permission to write settings</string>
+    <string name="txt_ok">Ok</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_ringtone_success">Set ringtone successfully</string>
+    <string name="this_action_contain_ads">This action contain Ads</string>
+    <string name="loading_cmp">Loading Consent Management Platform</string>
+    <string name="txt_next">Next</string>
+    <string name="txt_get_start">Get start</string>
+    <string name="are_you_sure_you_want_to_exit">are you sure you want to exit?</string>
+    <string name="txt_exit">Exit</string>
+    <string name="txt_revert_to_default_success">Default settings restored</string>
+    <string name="txt_you_not_set_ringtone_yet">You have not set a ringtone before</string>
+    <string name="txt_set_ringtone_alarm">Added successfully, please select the sound in your alarm</string>
+    <string name="txt_premission_request">Request permissions</string>
+    <string name="txt_write_setting_permission">Write setting</string>
+    <string name="txt_read_media_permisison">Read media</string>
+    <string name="txt_receiver_notification">Get notifications</string>
+    <string name="txt_premission_request_message">In order for the application to operate stably, please provide the following permissions</string>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_language"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size50"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imvBack"
+            android:layout_width="@dimen/size40"
+            android:layout_height="@dimen/size40"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            app:tint="@color/black"
+            android:padding="@dimen/size6"
+            />
+
+        <TextView
+            android:text="@string/txt_language"
+            style="@style/TextView_Headline1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/size16"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"
+            />
+
+        <TextView
+            android:id="@+id/ivDone"
+            android:text="@string/txt_next"
+            style="@style/TextView_Headline2"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/app_main"
+            android:paddingVertical="@dimen/size5"
+            android:paddingHorizontal="@dimen/size15"
+            android:layout_marginRight="@dimen/size10"
+            android:background="@drawable/bg_next_language_btn"
+            />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcl_language"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/size10"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/fl_adplaceholder"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_language" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/fl_adplaceholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <include
+            android:id="@+id/native_ad_view"
+            layout="@layout/ad_unified_language"/>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
