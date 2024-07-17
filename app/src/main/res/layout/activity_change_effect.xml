@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        
+        <ImageView
+            android:layout_width="@dimen/size40"
+            android:layout_height="@dimen/size50"
+            android:src="@drawable/ic_back2"
+            android:padding="@dimen/size7"
+            android:layout_marginHorizontal="@dimen/size10"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_change_voice"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size16"
+            android:textStyle="bold"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_gradient_app_round7"
+            android:layout_marginHorizontal="@dimen/size10"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_save"
+                android:background="@drawable/bg_white_round7"
+                android:layout_margin="@dimen/size2"
+                android:paddingHorizontal="@dimen/size10"
+                android:paddingVertical="@dimen/size3"
+                android:textSize="@dimen/size12"
+                android:textColor="@color/app_main"
+                android:textStyle="bold"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg_dark"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reEffect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ll_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/size20"
+            android:layout_marginBottom="@dimen/size20"
+            app:cardCornerRadius="@dimen/size10"
+            >
+
+            <include
+                android:id="@+id/player_view"
+                layout="@layout/custom_controller_preview" />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</LinearLayout>

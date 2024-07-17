@@ -72,58 +72,66 @@ android {
         viewBinding true
         buildConfig true
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ["libs"]
+        }
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
     // hilt
-    implementation "com.google.dagger:hilt-android:2.46.1"
-    kapt "com.google.dagger:hilt-compiler:2.46.1"
+    implementation "com.google.dagger:hilt-android:2.51.1"
+    kapt "com.google.dagger:hilt-compiler:2.51.1"
 
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-runtime:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
-    implementation "androidx.fragment:fragment-ktx:1.5.7"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.3"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.8.3"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.8.3"
+    implementation "androidx.fragment:fragment-ktx:1.8.1"
 
     // gson
-    implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.google.code.gson:gson:2.11.0"
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.16.0'
 
+    // fb shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
-    implementation "androidx.room:room-runtime:2.2.4"
-    kapt "androidx.room:room-compiler:2.2.4"
-    implementation "androidx.room:room-ktx:2.2.5"
+    // room db
+    implementation "androidx.room:room-runtime:2.6.1"
+    kapt "androidx.room:room-compiler:2.6.1"
+    implementation "androidx.room:room-ktx:2.6.1"
 
     //firebase
-    implementation 'com.google.firebase:firebase-config-ktx:21.5.0'
-    implementation(platform("com.google.firebase:firebase-bom:32.1.1"))
+    implementation 'com.google.firebase:firebase-config-ktx:22.0.0'
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     implementation("com.google.firebase:firebase-crashlytics-ktx")
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-messaging")
 
-    /*ads*/
-    def ads_version = "22.1.0"
-    implementation "com.google.android.gms:play-services-ads:$ads_version"
+    //ads
+    implementation "com.google.android.gms:play-services-ads:23.2.0"
 
     // ump
-    implementation("com.google.android.ump:user-messaging-platform:2.1.0")
+    implementation("com.google.android.ump:user-messaging-platform:3.0.0")
 
     // viewpager dot indicator
     implementation("com.tbuonomo:dotsindicator:5.0")

@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "demo_mvvm"
+rootProject.name = "voice chager"
 include ':app'

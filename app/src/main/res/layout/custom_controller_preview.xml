@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/exo_play"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/size8"
+            android:layout_width="@dimen/size52"
+            android:layout_height="@dimen/size52"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="@dimen/size10"
+            android:src="@drawable/ic_play"
+            />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:progress="50"
+            android:layout_centerVertical="true"
+            android:progressTint="@color/app_main"
+            android:progressBackgroundTint="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/exo_play"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/exo_position1"
+            android:layout_marginTop="@dimen/size5"
+            />
+
+        <TextView
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/exo_position1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            app:layout_constraintLeft_toLeftOf="@id/seekbar"
+            app:layout_constraintTop_toBottomOf="@id/seekbar"
+            app:layout_constraintBottom_toBottomOf="@id/exo_play"
+            android:layout_marginLeft="@dimen/size10"
+            android:layout_marginBottom="@dimen/size5"
+            />
+
+        <TextView
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/exo_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01:00"
+            app:layout_constraintRight_toRightOf="@id/seekbar"
+            app:layout_constraintTop_toBottomOf="@id/seekbar"
+            app:layout_constraintBottom_toBottomOf="@id/exo_play"
+            android:layout_marginRight="@dimen/size10"
+            android:layout_marginBottom="@dimen/size5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size8"
+        android:layout_marginTop="@dimen/size4"
+        android:layout_marginRight="@dimen/size8"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/imgReset"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/size8"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="30dp" />
+
+
+        <ImageView
+            android:id="@+id/exo_volume"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/size8"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp" />
+    </RelativeLayout>
+</LinearLayout>

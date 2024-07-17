@@ -29,6 +29,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     companion object {
         fun start(activity: Activity) {
+            activity.overridePendingTransition(0, 0)
             activity.startActivity(Intent(activity, SplashActivity::class.java))
         }
     }
