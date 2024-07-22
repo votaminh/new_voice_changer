@@ -19,6 +19,10 @@ class AudioAdapter : BaseAdapter<Audio, ItemAudioBinding>()  {
             val file = File(item.path)
             tvName.text = file.name
             tvTime.text = file.lastModified().timeToString()
+
+            root.setOnClickListener {
+                onClick?.invoke(item)
+            }
         }
     }
 }

@@ -19,9 +19,14 @@ class ChangeEffectActivity : BaseActivity<ActivityChangeEffectBinding>() {
     private val effectAdapter = EffectAdapter()
     private var mChangeEffectsModule : ChangeEffectsModule? = null
 
+    private var pathAudio = ""
+
     companion object {
-        fun start(activity : Activity){
-            activity.startActivity(Intent(activity, ChangeEffectActivity::class.java))
+        const val KEY_PATH_FILE = "KEY_PATH_FILE"
+        fun start(activity : Activity, path : String){
+            val intent = Intent(activity, ChangeEffectActivity::class.java)
+            intent.putExtra(KEY_PATH_FILE, path)
+            activity.startActivity(intent)
         }
     }
 
@@ -31,6 +36,8 @@ class ChangeEffectActivity : BaseActivity<ActivityChangeEffectBinding>() {
 
     override fun initViews() {
         super.initViews()
+
+        getData()
 
         viewBinding.run {
             save.setOnClickListener {
@@ -46,16 +53,19 @@ class ChangeEffectActivity : BaseActivity<ActivityChangeEffectBinding>() {
         viewModel.getEffect()
     }
 
+    private fun getData() {
+        pathAudio = intent.getStringExtra(KEY_PATH_FILE).toString()
+    }
+
     private fun saveAudio(name: String) {
 
     }
 
     private fun initEffect() {
-        val path = "/data/data/com.voice.chager/files/stutter-i-love-you-82913.mp3"
         mChangeEffectsModule = ChangeEffectsModule(this)
         mChangeEffectsModule?.run {
             createOutputDir(this@ChangeEffectActivity)
-            setPath(path)
+            setPath(pathAudio)
             createDBMedia()
         }
     }

@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.msc.voice_chager.base.activity.BaseActivity
+import com.msc.voice_chager.component.change_effect.ChangeEffectActivity
 import com.msc.voice_chager.databinding.ActivityImportFileBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,6 +38,9 @@ class ImportFileActivity : BaseActivity<ActivityImportFileBinding>() {
         viewBinding.reAudio.run {
             layoutManager = LinearLayoutManager(this@ImportFileActivity, RecyclerView.VERTICAL, false)
             adapter = audioAdapter
+            audioAdapter.onClick = { audio ->
+                ChangeEffectActivity.start(this@ImportFileActivity, audio.path)
+            }
         }
     }
 

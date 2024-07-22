@@ -342,6 +342,10 @@ public class BASS_FX {
     }
 
     static {
-        System.loadLibrary("bass_fx");
+        try {
+            System.loadLibrary("bass_fx");
+        }catch (UnsatisfiedLinkError e){
+
+        }
     }
 }
