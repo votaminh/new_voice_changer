@@ -34,7 +34,7 @@ abstract class BaseActivity<V : ViewBinding> : AppCompatActivity() {
             res.updateConfiguration(conf, dm)
         }
 
-        setStatusBarColor(ContextCompat.getColor(this, R.color.app_bg), false)
+        setStatusBarColor(ContextCompat.getColor(this, R.color.app_bg), true)
         hideSystemUI()
         viewBinding = provideViewBinding()
         setContentView(viewBinding.root)

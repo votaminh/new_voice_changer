@@ -32,6 +32,7 @@
             />
 
         <RelativeLayout
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_gradient_app_round7"
@@ -43,8 +44,8 @@
                 android:text="@string/txt_save"
                 android:background="@drawable/bg_white_round7"
                 android:layout_margin="@dimen/size2"
-                android:paddingHorizontal="@dimen/size10"
-                android:paddingVertical="@dimen/size3"
+                android:paddingHorizontal="@dimen/size15"
+                android:paddingVertical="@dimen/size5"
                 android:textSize="@dimen/size12"
                 android:textColor="@color/app_main"
                 android:textStyle="bold"
@@ -62,7 +63,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/reEffect"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/size100"
+            android:clipToPadding="false"
+            />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/ll_control"
@@ -82,5 +86,13 @@
                 layout="@layout/custom_controller_preview" />
         </androidx.cardview.widget.CardView>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size100"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_gradient_black_transparent"
+            android:alpha="0.2"
+            />
+        
     </RelativeLayout>
 </LinearLayout>

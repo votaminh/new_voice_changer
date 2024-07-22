@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="@dimen/size25"
     >
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/size60"
+        android:layout_height="@dimen/size60"
+        app:cardCornerRadius="@dimen/size30"
+        >
+        <ImageView
+            android:id="@+id/imv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvName"
@@ -11,8 +26,8 @@
         android:text="name effect"
         android:textColor="@color/black"
         android:layout_centerInParent="true"
-        android:background="@color/gray"
-        android:layout_margin="@dimen/size10"
+        android:textSize="@dimen/size11"
+        android:layout_marginTop="@dimen/size10"
         />
 
-</RelativeLayout>
+</LinearLayout>

@@ -62,4 +62,8 @@
     <string name="txt_premission_request_message">In order for the application to operate stably, please provide the following permissions</string>
     <string name="txt_change_voice">Change Voice</string>
     <string name="txt_save">Save</string>
+    <string name="txt_save_file">Save file</string>
+    <string name="txt_no">No</string>
+    <string name="txt_name">Name</string>
+    <string name="txt_name_not_empty">Name cannot be blank</string>
 </resources>

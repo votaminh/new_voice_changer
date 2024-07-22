@@ -5,11 +5,14 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.msc.voice_chager.R
 import com.msc.voice_chager.admob.NameRemoteAdmob
 import com.msc.voice_chager.databinding.DialogExitBinding
+import com.msc.voice_chager.databinding.DialogSaveFileBinding
+import com.msc.voice_chager.utils.DialogEx.showDialogSuccess
 
 object DialogEx {
     fun Activity.showDialogRequestWriteSettingPermission(okAction : (() -> Unit)? = null){
@@ -64,6 +67,31 @@ object DialogEx {
                 tvCancel.setOnClickListener {
                     builder.dismiss()
                     NativeAdmobUtils.nativeExitLiveData?.reLoad()
+                }
+            }
+        }
+    }
+
+    fun Activity?.showDialogSaveFile(saveAction : ((String) -> Unit)? = null){
+        this?.let { activity ->
+            val builder = AlertDialog.Builder(this)
+            val binding = DialogSaveFileBinding.inflate(LayoutInflater.from(this))
+            builder.setView(binding.root)
+            val dialog = builder.create()
+            dialog.show()
+            binding.run {
+                no.setOnClickListener {
+                    dialog.dismiss()
+                }
+
+                save.setOnClickListener {
+                    val name = edtName.text.toString()
+                    if(name.isEmpty()){
+                        Toast.makeText(activity, activity.getString(R.string.txt_name_not_empty), Toast.LENGTH_SHORT).show()
+                    }else{
+                        saveAction?.invoke(name)
+                        dialog.dismiss()
+                    }
                 }
             }
         }

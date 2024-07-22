@@ -19,7 +19,7 @@ class ChangeEffectViewModel @Inject constructor(@ApplicationContext val context:
     var effectModelsLive = MutableLiveData<List<ModelEffects>>()
 
     fun getEffect(){
-        val open: InputStream = context.getAssets().open("effects.json")
+        val open: InputStream = context.assets.open("effect/effects.json")
         val bArr = ByteArray(open.available())
         open.read(bArr)
         open.close()

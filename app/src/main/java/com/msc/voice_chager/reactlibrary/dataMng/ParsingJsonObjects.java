@@ -46,7 +46,7 @@ public class ParsingJsonObjects implements InterfaceVoiceChangerListener {
         try {
             JSONObject jSONObject = new JSONObject(str);
             String string = jSONObject.getString("id");
-            String string2 = jSONObject.getString("name");
+            String string2 = jSONObject.getString("icon");
             int i = jSONObject.getInt("pitch");
             int i2 = jSONObject.getInt("rate");
             if (jSONObject.opt("reverse") != null) {

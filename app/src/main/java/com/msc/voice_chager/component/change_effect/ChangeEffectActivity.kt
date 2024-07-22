@@ -9,6 +9,7 @@ import com.msc.voice_chager.base.activity.BaseActivity
 import com.msc.voice_chager.databinding.ActivityChangeEffectBinding
 import com.msc.voice_chager.reactlibrary.ChangeEffectsModule
 import com.msc.voice_chager.reactlibrary.`object`.ModelEffects
+import com.msc.voice_chager.utils.DialogEx.showDialogSaveFile
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,10 +32,22 @@ class ChangeEffectActivity : BaseActivity<ActivityChangeEffectBinding>() {
     override fun initViews() {
         super.initViews()
 
+        viewBinding.run {
+            save.setOnClickListener {
+                showDialogSaveFile{ name ->
+                    saveAudio(name)
+                }
+            }
+        }
+
         initEffect()
 
         buildReEffect()
         viewModel.getEffect()
+    }
+
+    private fun saveAudio(name: String) {
+
     }
 
     private fun initEffect() {
@@ -62,7 +75,7 @@ class ChangeEffectActivity : BaseActivity<ActivityChangeEffectBinding>() {
 
     private fun buildReEffect() {
         viewBinding.reEffect.run {
-            layoutManager = GridLayoutManager(this@ChangeEffectActivity, 3, RecyclerView.VERTICAL, false)
+            layoutManager = GridLayoutManager(this@ChangeEffectActivity, 4, RecyclerView.VERTICAL, false)
             adapter = effectAdapter
             effectAdapter.onClickPossition = { modelEffects, i ->
                 mChangeEffectsModule?.effectPlay(i)
