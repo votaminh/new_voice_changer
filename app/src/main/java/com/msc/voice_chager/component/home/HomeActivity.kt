@@ -4,13 +4,20 @@ import android.app.Activity
 import android.content.Intent
 import com.msc.voice_chager.base.activity.BaseActivity
 import com.msc.voice_chager.component.change_effect.ChangeEffectActivity
+import com.msc.voice_chager.component.import_file.ImportFileActivity
 import com.msc.voice_chager.databinding.ActivityMainBinding
 import com.msc.voice_chager.reactlibrary.ChangeEffectsModule
+import com.msc.voice_chager.utils.PermissionUtils
+import com.msc.voice_chager.utils.SpManager
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
+
+    @Inject
+    lateinit var spManager: SpManager
 
     companion object {
         fun start(activity : Activity){
@@ -24,5 +31,17 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initViews() {
         super.initViews()
+
+        spManager.saveOnBoarding()
+
+        viewBinding.run {
+            importFile.setOnClickListener {
+                if(PermissionUtils.storageAudioGrant(this@HomeActivity)){
+                    ImportFileActivity.start(this@HomeActivity)
+                }else{
+                    PermissionUtils.requestStorageAudio(this@HomeActivity, 3221)
+                }
+            }
+        }
     }
 }

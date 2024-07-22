@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import com.msc.voice_chager.R
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 
@@ -32,5 +34,11 @@ object AppEx {
         val config = resources.configuration
         config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics)
+    }
+
+    fun Long.timeToString(): String {
+        val sampleFormat = SimpleDateFormat("dd/MM/yyyy")
+        val date = Date(this)
+        return sampleFormat.format(date)
     }
 }

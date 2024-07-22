@@ -62,6 +62,19 @@ class PermissionUtils {
             }
         }
 
+        fun storageAudioGrant(activity: Activity) : Boolean{
+            return if (Build.VERSION.SDK_INT < 23) {
+                true
+            } else {
+                if (Build.VERSION.SDK_INT < 33) {
+                    ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+                    ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                } else {
+                    ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_MEDIA_AUDIO) == PackageManager.PERMISSION_GRANTED
+                }
+            }
+        }
+
         fun requestStorage(activity: Activity, request : Int){
             if (Build.VERSION.SDK_INT < 23) {
                 return
@@ -70,6 +83,19 @@ class PermissionUtils {
                     arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
                 } else {
                     arrayOf(Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO, Manifest.permission.READ_MEDIA_AUDIO)
+                }
+                ActivityCompat.requestPermissions(activity, permissions, request)
+            }
+        }
+
+        fun requestStorageAudio(activity: Activity, request : Int){
+            if (Build.VERSION.SDK_INT < 23) {
+                return
+            } else {
+                val permissions = if (Build.VERSION.SDK_INT < 33) {
+                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                } else {
+                    arrayOf(Manifest.permission.READ_MEDIA_AUDIO)
                 }
                 ActivityCompat.requestPermissions(activity, permissions, request)
             }
