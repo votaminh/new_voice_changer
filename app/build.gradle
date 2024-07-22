@@ -135,4 +135,7 @@ dependencies {
 
     // viewpager dot indicator
     implementation("com.tbuonomo:dotsindicator:5.0")
+
+    // round image
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }

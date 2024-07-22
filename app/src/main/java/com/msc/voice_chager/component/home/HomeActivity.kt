@@ -13,7 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     companion object {
-        const val REQUEST_PICKER_CONTACT = 211
         fun start(activity : Activity){
             activity.startActivity(Intent(activity, HomeActivity::class.java))
         }
@@ -25,6 +24,5 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initViews() {
         super.initViews()
-        ChangeEffectActivity.start(this@HomeActivity)
     }
 }

@@ -37,24 +37,26 @@ class PermissionActivity : BaseActivity<ActivityPermissonBinding>() {
     override fun initViews() {
         super.initViews()
 
-        viewBinding.run {
-            llWriteSetting.setOnClickListener {
-                PermissionUtils.requestWriteSetting(this@PermissionActivity, 342)
-            }
-            llNotification.setOnClickListener {
-                PermissionUtils.requestNotificationPermission(this@PermissionActivity, 533)
-            }
-            llReadMedia.setOnClickListener {
-                PermissionUtils.requestStorage(this@PermissionActivity, 522)
-            }
-
-            tvNext.setOnClickListener {
-                HomeActivity.start(this@PermissionActivity)
-                finish()
-            }
-        }
-
-        checkState()
+//        viewBinding.run {
+//            llWriteSetting.setOnClickListener {
+//                PermissionUtils.requestWriteSetting(this@PermissionActivity, 342)
+//            }
+//            llNotification.setOnClickListener {
+//                PermissionUtils.requestNotificationPermission(this@PermissionActivity, 533)
+//            }
+//            llReadMedia.setOnClickListener {
+//                PermissionUtils.requestStorage(this@PermissionActivity, 522)
+//            }
+//
+//            tvNext.setOnClickListener {
+//                HomeActivity.start(this@PermissionActivity)
+//                finish()
+//            }
+//        }
+//
+//        checkState()
+        HomeActivity.start(this@PermissionActivity)
+        finish()
     }
 
     private fun checkState() {

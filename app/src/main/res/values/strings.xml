@@ -66,4 +66,9 @@
     <string name="txt_no">No</string>
     <string name="txt_name">Name</string>
     <string name="txt_name_not_empty">Name cannot be blank</string>
+    <string name="txt_create_by_ai">Create voice by ai</string>
+    <string name="txt_message_banner">Celebrities (Singers, Actors)</string>
+    <string name="txt_record_audio">Record Audio</string>
+    <string name="txt_import_audio">Import Audio</string>
+    <string name="txt_my_file">My File</string>
 </resources>
