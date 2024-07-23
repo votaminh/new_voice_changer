@@ -71,4 +71,9 @@
     <string name="txt_record_audio">Record Audio</string>
     <string name="txt_import_audio">Import Audio</string>
     <string name="txt_my_file">My File</string>
+    <string name="notification_recording">Recording</string>
+    <string name="txt_start_record">Start record</string>
+    <string name="txt_click_the_audio_icon_above_to_start_recording">Click The Audio Icon Above to Start Recording.</string>
+    <string name="txt_stop">Stop</string>
+    <string name="reset">Reset</string>
 </resources>

@@ -138,4 +138,10 @@ dependencies {
 
     // round image
     implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //exo
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
+
+    // lottie
+    implementation 'com.airbnb.android:lottie:5.2.0'
 }

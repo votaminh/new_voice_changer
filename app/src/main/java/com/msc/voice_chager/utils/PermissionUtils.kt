@@ -62,19 +62,6 @@ class PermissionUtils {
             }
         }
 
-        fun storageAudioGrant(activity: Activity) : Boolean{
-            return if (Build.VERSION.SDK_INT < 23) {
-                true
-            } else {
-                if (Build.VERSION.SDK_INT < 33) {
-                    ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
-                    ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                } else {
-                    ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_MEDIA_AUDIO) == PackageManager.PERMISSION_GRANTED
-                }
-            }
-        }
-
         fun requestStorage(activity: Activity, request : Int){
             if (Build.VERSION.SDK_INT < 23) {
                 return
@@ -88,6 +75,19 @@ class PermissionUtils {
             }
         }
 
+        fun storageAudioGrant(activity: Activity) : Boolean{
+            return if (Build.VERSION.SDK_INT < 23) {
+                true
+            } else {
+                if (Build.VERSION.SDK_INT < 33) {
+                    ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+                            ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                } else {
+                    ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_MEDIA_AUDIO) == PackageManager.PERMISSION_GRANTED
+                }
+            }
+        }
+
         fun requestStorageAudio(activity: Activity, request : Int){
             if (Build.VERSION.SDK_INT < 23) {
                 return
@@ -98,6 +98,22 @@ class PermissionUtils {
                     arrayOf(Manifest.permission.READ_MEDIA_AUDIO)
                 }
                 ActivityCompat.requestPermissions(activity, permissions, request)
+            }
+        }
+
+        fun recordAudioGrant(activity: Activity): Boolean {
+            return if (Build.VERSION.SDK_INT < 23) {
+                true
+            } else {
+                ContextCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+            }
+        }
+
+        fun requestRecordAudio(activity: Activity, request: Int) {
+            if (Build.VERSION.SDK_INT < 23) {
+                return
+            } else {
+                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.RECORD_AUDIO), request)
             }
         }
     }
