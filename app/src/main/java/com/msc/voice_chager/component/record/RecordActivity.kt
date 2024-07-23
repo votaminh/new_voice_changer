@@ -11,7 +11,9 @@ import androidx.activity.viewModels
 import androidx.databinding.Observable
 import com.msc.voice_chager.R
 import com.msc.voice_chager.base.activity.BaseActivity
+import com.msc.voice_chager.component.change_effect.ChangeEffectActivity
 import com.msc.voice_chager.databinding.ActivityRecordBinding
+import com.msc.voice_chager.service.ServiceRecordingVoice
 import com.msc.voice_chager.utils.AppConstant
 import com.msc.voice_chager.utils.ViewEx.invisible
 import com.msc.voice_chager.utils.ViewEx.visible
@@ -113,38 +115,35 @@ class RecordActivity : BaseActivity<ActivityRecordBinding>() {
                 stopTimer()
 
                 getWindow().clearFlags(128)
-                viewModel.recording.observe(this@RecordActivity){ recordingModel ->
-                    if (recordingModel != null) {
-                        val bundle = Bundle()
-                        bundle.putString(
-                            AppConstant.APP_CONSTANT.getKEY_PATH_VOICE(),
-                            recordingModel.getPath()
-                        )
-                        bundle.putString(
-                            AppConstant.APP_CONSTANT.getKEY_SCREEN_INTO_VOICE_EFFECTS(),
-                            "RecordActivity"
-                        )
-//                        nextActivity(
-//                            ChangeEffectActivity::class.java,
-//                            bundle
-//                        )
-                        getBindingData().icStart.setClickable(
-                            true
-                        )
-                        getBindingData().txtStartRecord.setText(
-                            "Start Record"
-                        )
-                        txtExtra.setVisibility(
-                            View.VISIBLE
-                        )
-                        icStart.setImageResource(
-                            R.drawable.ic_start_record
-                        )
-                    }
-                }
                 stateAudio = RecordAudioType.STATE_PREPARE
                 showHideExRecord()
-                null
+            }
+
+            showHideExRecord()
+            viewModel.connectService(ServiceRecordingVoice.makeIntent(this@RecordActivity, true))
+        }
+    }
+
+    override fun initObserver() {
+        super.initObserver()
+
+        viewModel.recording.observe(this@RecordActivity){ recordingModel ->
+            if (recordingModel != null) {
+                ChangeEffectActivity.start(this@RecordActivity, recordingModel.path)
+                viewBinding.run {
+                    icStart.setClickable(
+                        true
+                    )
+                    txtStartRecord.setText(
+                        "Start Record"
+                    )
+                    txtExtra.setVisibility(
+                        View.VISIBLE
+                    )
+                    icStart.setImageResource(
+                        R.drawable.ic_start_record
+                    )
+                }
             }
         }
     }

@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
     <application
         android:name=".App"
         android:allowBackup="false"
@@ -84,6 +86,13 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <service
+            android:name=".service.ServiceRecordingVoice"
+            android:exported="true"
+            android:stopWithTask="true"
+            android:foregroundServiceType="mediaPlayback"
+            />
     </application>
 
 </manifest>
