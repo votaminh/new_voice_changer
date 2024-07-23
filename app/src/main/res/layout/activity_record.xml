@@ -62,8 +62,8 @@
 
                     <ImageView
                         android:id="@+id/icStart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
                         android:layout_centerInParent="true"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:src="@drawable/ic_start_record" />
@@ -112,7 +112,7 @@
                 android:paddingTop="12dp"
                 android:paddingRight="12dp"
                 android:paddingBottom="12dp"
-                android:visibility="visible"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
@@ -192,7 +192,7 @@
                 android:layout_centerInParent="true"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_play"
-                android:visibility="visible"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/rlyBottom"
                 app:layout_constraintEnd_toEndOf="@+id/rlyBottom"
                 app:layout_constraintStart_toStartOf="@+id/rlyBottom"
